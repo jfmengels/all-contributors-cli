@@ -116,6 +116,7 @@ module.exports = function prompt() {
           commitConvention: answers.commitConvention,
           contributors: [],
           contributorsPerLine: 7,
+          linkToUsage: true,
         },
         contributorFile: answers.contributorFile,
         badgeFile: answers.badgeFile,

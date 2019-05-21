@@ -5,6 +5,7 @@
   "repoType": "github",
   "commit": false,
   "contributorsPerLine": 6,
+  "linkToUsage": true,
   "contributors": [
     {
       "login": "jfmengels",

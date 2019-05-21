@@ -36,10 +36,26 @@ function injectListBetweenTags(newContent) {
 }
 
 function formatLine(contributors) {
-  return `<td align="center">${contributors.join('</td><td align="center">')}</td>`
+   return `<td align="center">${contributors.join('</td><td align="center">')}</td>`
+}
+
+
+function formatFooter(options) {
+  if (!options.linkToUsage) {
+    return ''
+  }
+  const smallLogoURL = 'https://raw.githubusercontent.com/all-contributors/all-contributors-cli/1b8533af435da9854653492b1327a23a4dbd0a10/assets/logo-small.svg'
+  const linkToAllContributors = 'https://all-contributors.js.org'
+  const linkToBotAdd = 'https://all-contributors.js.org/docs/en/bot/usage'
+
+    return `<tr>
+        <td size="13px" colspan="${options.contributorsPerLine}"><img src="${smallLogoURL}" > <a href="${linkToBotAdd}">Add your contribution</a></td>
+    </tr>`
 }
 
 function generateContributorsList(options, contributors) {
+  const tableFooter = formatFooter(options)
+
   return _.flow(
     _.map(function formatEveryContributor(contributor) {
       return formatContributor(options, contributor)
@@ -48,7 +64,7 @@ function generateContributorsList(options, contributors) {
     _.map(formatLine),
     _.join('</tr><tr>'),
     newContent => {
-      return `\n<table><tr>${newContent}</tr></table>\n\n`
+      return `\n<table><tbody><tr>${newContent}</tr>\n${tableFooter}\n</tbody></table>\n`
     },
   )(contributors)
 }
