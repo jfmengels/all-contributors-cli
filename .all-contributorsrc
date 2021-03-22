@@ -549,6 +549,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "SirWindfield",
+      "name": "SirWindfield",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5113257?v=4",
+      "profile": "https://github.com/SirWindfield",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "skipCi": true

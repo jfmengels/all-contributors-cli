@@ -1,7 +1,7 @@
 const githubAPI = require('./github')
 const gitlabAPI = require('./gitlab')
 
-const privateToken = (process.env && process.env.PRIVATE_TOKEN) || ''
+const privateToken = (process.env && (process.env.ALL_CONTRIBUTORS_PRIVATE_TOKEN || process.env.PRIVATE_TOKEN)) || ''
 const SUPPORTED_REPO_TYPES = {
   github: {
     value: 'github',
