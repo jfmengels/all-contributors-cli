@@ -43,20 +43,20 @@
   "homepage": "https://github.com/all-contributors/all-contributors-cli#readme",
   "dependencies": {
     "@babel/runtime": "^7.7.6",
-    "async": "^3.0.1",
+    "async": "^3.1.0",
     "chalk": "^4.0.0",
     "didyoumean": "^1.2.1",
     "inquirer": "^7.0.4",
-    "json-fixer": "^1.5.1",
+    "json-fixer": "^1.6.8",
     "lodash": "^4.11.2",
     "node-fetch": "^2.6.0",
     "pify": "^5.0.0",
     "yargs": "^15.0.1"
   },
   "devDependencies": {
-    "codecov": "^3.1.0",
-    "cz-conventional-changelog": "^3.0.0",
-    "git-cz": "^4.1.0",
+    "codecov": "^3.8.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-cz": "^4.7.6",
     "kcd-scripts": "^6.2.0",
     "nock": "^12.0.0",
     "semantic-release": "^17.0.8"
