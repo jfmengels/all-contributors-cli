@@ -43,12 +43,15 @@
   "homepage": "https://github.com/all-contributors/all-contributors-cli#readme",
   "dependencies": {
     "@babel/runtime": "^7.7.6",
+    "ac-learn": "^1.5.1",
     "async": "^3.0.1",
     "chalk": "^4.0.0",
+    "clui": "^0.3.6",
     "didyoumean": "^1.2.1",
     "inquirer": "^7.3.3",
     "json-fixer": "^1.5.1",
     "lodash": "^4.11.2",
+    "name-your-contributors": "^3.8.3",
     "node-fetch": "^2.6.0",
     "pify": "^5.0.0",
     "yargs": "^15.0.1"

@@ -10,13 +10,20 @@ function isNewContributor(contributorList, username) {
 
 module.exports = function addContributor(options, username, contributions) {
   const answersP = prompt(options, username, contributions)
-  const contributorsP = answersP.then(answers =>
-    add(options, answers.username, answers.contributions, repo.getUserInfo),
-  )
+  const contributorsP = answersP
+    .then(answers =>
+      add(options, answers.username, answers.contributions, repo.getUserInfo),
+    )
+    //eslint-disable-next-line no-console
+    .catch(err => console.error('contributorsP error:', err))
 
-  const writeContributorsP = contributorsP.then(contributors =>
-    util.configFile.writeContributors(options.config, contributors),
-  )
+  const writeContributorsP = contributorsP
+    .then(contributors => {
+      // console.log('opts.config=', options.config, 'contributors=', contributors)
+      return util.configFile.writeContributors(options.config, contributors)
+    })
+    //eslint-disable-next-line no-console
+    .catch(err => console.error('writeContributorsP error:', err))
 
   return Promise.all([answersP, contributorsP, writeContributorsP]).then(
     res => {
@@ -32,5 +39,7 @@ module.exports = function addContributor(options, username, contributions) {
         ),
       }
     },
+    //eslint-disable-next-line no-console
+    err => console.error('contributors fail: ', err),
   )
 }
