@@ -44,6 +44,7 @@ function formatLine(contributors) {
 }
 
 function generateContributorsList(options, contributors) {
+  const contributorsPerLine = options.contributorsPerLine || 7
   return _.flow(
     _.sortBy(contributor => {
       if (options.contributorsSortAlphabetically) {
@@ -53,7 +54,7 @@ function generateContributorsList(options, contributors) {
     _.map(function formatEveryContributor(contributor) {
       return formatContributor(options, contributor)
     }),
-    _.chunk(options.contributorsPerLine),
+    _.chunk(contributorsPerLine),
     _.map(formatLine),
     _.join('\n  </tr>\n  <tr>\n    '),
     newContent => {
