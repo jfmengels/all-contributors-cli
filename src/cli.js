@@ -16,22 +16,18 @@ const cwd = process.cwd()
 const defaultRCFile = path.join(cwd, '.all-contributorsrc')
 
 const yargv = yargs
+  .scriptName('all-contributors')
   .help('help')
   .alias('h', 'help')
   .alias('v', 'version')
   .version()
   .recommendCommands()
-  .command('generate', 'Generate the list of contributors')
-  .usage('Usage: $0 generate')
-  .command('add', 'add a new contributor')
-  .usage('Usage: $0 add <username> <contribution>')
-  .command('init', 'Prepare the project to be used with this tool')
-  .usage('Usage: $0 init')
+  .command('generate', `Generate the list of contributors\n\nUSAGE: all-contributors generate`)
+  .command('add', `Add a new contributor\n\nUSAGE: all-contributors add <username> <comma-separated contributions>`)
+  .command('init', `Prepare the project to be used with this tool\n\nUSAGE: all-contributors init`)
   .command(
     'check',
-    'Compares contributors from the repository with the ones credited in .all-contributorsrc',
-  )
-  .usage('Usage: $0 check')
+    `Compare contributors from the repository with the ones credited in .all-contributorsrc'\n\nUSAGE: all-contributors check`)
   .boolean('commit')
   .default('files', ['README.md'])
   .default('contributorsPerLine', 7)
